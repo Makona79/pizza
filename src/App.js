@@ -7,6 +7,8 @@ import Pizzablock from "./components/Pizzablock";
 import { useState } from "react";
 import { useEffect } from "react";
 import Skeleton from "./components/Skeleton";
+import { Routes, Route, Outlet, Link } from "react-router-dom";
+
 // import pizzas from './assets/pizzas.json';
 
 function App() {
