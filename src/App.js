@@ -36,8 +36,28 @@ function App() {
 			"price": 295,
 			"category": 1,
 			"rating": 4
+		 },
+		 {
+			"id": 3,
+			"imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/af553bf5-3887-4501-b88e-8f0f55229429.jpg",
+			"title": "Кисло-сладкий цыпленок",
+			"types": [1],
+			"sizes": [26, 30, 40],
+			"price": 275,
+			"category": 2,
+			"rating": 2
+		 },
+		 {
+			"id": 4,
+			"imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+			"title": "Чизбургер-пицца",
+			"types": [0, 1],
+			"sizes": [26, 30, 40],
+			"price": 415,
+			"category": 3,
+			"rating": 8
 		 },]
-		console.log(pizzas);
+		
 	return (
 		<div className="wrapper">
 			<Header />
