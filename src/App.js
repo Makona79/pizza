@@ -6,6 +6,7 @@ import Categories from "./components/Categories";
 import Pizzablock from "./components/Pizzablock";
 import { useState } from "react";
 import { useEffect } from "react";
+import Skeleton from "./components/Skeleton";
 // import pizzas from './assets/pizzas.json';
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
   // 	 },]
 
   const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     fetch("https://63306eb9591935f3c88fd5e5.mockapi.io/pizzas")
       .then((res) => {
@@ -68,6 +70,7 @@ function App() {
       })
       .then((arr) => {
         setItems(arr);
+        setIsLoading(false);
       });
   }, []);
 
@@ -82,9 +85,9 @@ function App() {
           </div>
           <h2 className="content__title">Все пиццы</h2>
           <div className="content__items">
-            {items.map((obj) => (
-              <Pizzablock key={obj.id} {...obj} />
-            ))}
+            {isLoading
+              ? [...new Array(4)].map((_, index) => <Skeleton key={index} />)
+              : items.map((obj) => <Pizzablock key={obj.id} {...obj} />)}
           </div>
         </div>
       </div>
