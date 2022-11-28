@@ -27,6 +27,7 @@ const Home = () => {
       });
     window.scrollTo(0, 0);
   }, [categoryId, sortType]);
+  
 
   return (
     <div className="container">
